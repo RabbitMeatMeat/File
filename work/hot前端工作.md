@@ -27,5 +27,11 @@
 2. 前端编译表， Pack All Tables To Binary；
 3. 后端编译表， 到10.0.128.3/dev/选择后端服务器打表； 
 	
+##增加sprite到hot1Atlas
+
+1. lock关于hot1Atlas的所有文件，目录Assets\Data\UI\Res\Atlas
+2. 打开NGUI的open the Atlas maker,选择hot1Atlas
+3. 选择要添加的图片
+4. commit上传关于hotAtlas的文件
 
 
