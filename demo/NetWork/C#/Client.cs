@@ -10,29 +10,32 @@ namespace Queen {
 				TcpClient tcpClient = new TcpClient();
 				Console.WriteLine("Connecting....");
 				
-				tcpClient.Connect("104.236.139.161", 8001);
+				tcpClient.Connect("104.236.139.161",  21576);
 				
 				Console.WriteLine("Connected");
-				Console.Write("Enter the string to be transmitted : ");
-				
-				string str = Console.ReadLine();
 				NetworkStream stream = tcpClient.GetStream();
-				
-				Byte[] data = System.Text.Encoding.ASCII.GetBytes(str);
-				
-				//Send the message to the connected TcpServer.
-				stream.Write(data, 0, data.Length);
-				
-				Console.WriteLine("Sent: {0}", str);
-				
-				data = new Byte[256];
-				
-				string responeData = String.Empty;
-				
-				Int32 bytes = stream.Read(data, 0, data.Length);
-				responeData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
-				Console.WriteLine("Received: {0}", responeData);
-				
+					
+				while (true)
+				{
+					Console.Write("Enter the string to be transmitted : ");
+					
+					string str = Console.ReadLine();
+					
+					Byte[] data = System.Text.Encoding.ASCII.GetBytes(str);
+					
+					//Send the message to the connected TcpServer.
+					stream.Write(data, 0, data.Length);
+					
+					Console.WriteLine("Sent: {0}", str);
+					
+					data = new Byte[10];
+					
+					string responeData = String.Empty;
+					Int32 bytes = stream.Read(data, 0, data.Length);
+
+					responeData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
+					Console.WriteLine("Received: {0}", responeData);
+				}
 				stream.Close();
 				tcpClient.Close();
 			}

@@ -3,23 +3,21 @@
 import socket
 import sys
 
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+tcpCliSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
+BUFSIZE = 1024
 server_address = ('104.236.139.161', 21576)
 print 'connecting to %s prot %s' % server_address
 
-sock.connect(server_address)
+tcpCliSock.connect(server_address)
 
-message = 'This is the message, I am Rabbit'
-
-print 'sending %s' % message
-sock.sendall(message)
-
-receivedCount = 0
-expectedCount = len(message)
-
-while receivedCount < expectedCount:
-	data = sock.recv(16)
-	receivedCount += len(data)
-
-sock.close()
+while True:
+	data = raw_input('> ')
+	if not data:
+		break
+	tcpCliSock.send(data)
+	data = tcpCliSock.recv(BUFSIZE)
+	if not data:
+		break
+	print data
+tcpCliSock.close()
