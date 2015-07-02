@@ -11,7 +11,7 @@ from time import ctime
 
 def test():
 	HOST = 'localhost'
-	PORT = 8001
+	PORT = 21576
 	BUFSIZE = 1024
 	ADDR = (HOST, PORT)
 

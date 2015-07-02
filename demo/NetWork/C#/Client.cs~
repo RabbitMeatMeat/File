@@ -10,7 +10,7 @@ namespace Queen {
 				TcpClient tcpClient = new TcpClient();
 				Console.WriteLine("Connecting....");
 				
-				tcpClient.Connect("104.236.139.161", 8001);
+				tcpClient.Connect("172.16.52.236", 8001);
 				
 				Console.WriteLine("Connected");
 				Console.Write("Enter the string to be transmitted : ");
