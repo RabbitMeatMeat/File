@@ -24,7 +24,7 @@
 ##配置xls表测试功能
 
 1. 修改xls表，提交；
-2. 前端编译表， Pack All Tables To Binary；
+2. 前端编译表， Pack All Tables To Binary；		
 3. 后端编译表， 到10.0.128.3/dev/选择后端服务器打表； 
 	
 ##增加sprite到hot1Atlas
@@ -33,5 +33,8 @@
 2. 打开NGUI的open the Atlas maker,选择hot1Atlas
 3. 选择要添加的图片
 4. commit上传关于hotAtlas的文件
+
+
+
 
 
