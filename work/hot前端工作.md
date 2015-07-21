@@ -21,6 +21,19 @@
 		
 		添加python命令，用于网页版本打表
 
+##增加协议
+1. Compile MSG prot file
+	
+		详细代码－>TablePacker.cs
+
+2. 添加RSP_xxx.cs和REQ_xxx.cs
+
+		根据后端提供的协议command_xxx_xxx.proto
+		添加REQ_command_xxx_xxx.cs 查询协议
+		添加RSP_command_xxx_xxx.cs 回复协议
+
+
+
 ##配置xls表测试功能
 
 1. 修改xls表，提交；
@@ -34,6 +47,13 @@
 3. 选择要添加的图片
 4. commit上传关于hotAtlas的文件
 
+##使用texture
+
+1. 修改TextureType
+	
+		texture->Editor GUI and Legacy GUI
+		
+		
 
 
 
