@@ -1,0 +1,52 @@
+﻿git study
+
+//设置
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+
+$ pwd //显示当前目录
+new repository
+	git init
+
+add file to repository
+	git add XX.XX
+	git commit -m "XXX" // 提交的说明，可以是任何东西
+
+// 退回到原先版本
+	git log //查看历史记录
+	git reflog //记录每一次命令
+	git reset --hard HEAD^ // 上一个版本
+	git reset -- hard XXXXX // xxxxcommit id 退回到标记版本
+	
+//
+场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout -- file。
+
+场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD file，就回到了场景1，第二步按场景1操作。
+
+
+
+//推送到远程
+
+git remote add origin git@github.com:rabbithair/XXX.git
+本地关联远程库
+git push -u origin master
+关联后，使用该命令第一次推送master分支的所有内容；
+git push origin master
+此后，每次本地提交后，只要有必要，就可以使用该命令推送最新修改到github；
+
+
+
+// 关于分支
+Git鼓励大量使用分支：
+
+查看分支：git branch
+
+创建分支：git branch name
+
+切换分支：git checkout name
+
+创建+切换分支：git checkout -b name
+
+合并某分支到当前分支：git merge name
+
+删除分支：git branch -d name
