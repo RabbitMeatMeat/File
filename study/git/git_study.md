@@ -26,7 +26,19 @@
  	
 	git reset HEAD file
 	git checkout -- file
+
+
+### diff
 	
+####当前版本和add版本比较
+
+	git diff 
+
+####add版本和库版本比较
+	git diff --cached
+
+####当前版本和库版本比较
+	git diff HEAD
 
 
 ### 推送到远程
